@@ -93,7 +93,7 @@ body {
 
 /* index.html - DIVs containing Images and Text */
 .container-post {
-  background-color: #af988c;
+  background-color: #e7d1c6;
 }
 .container-image {
   color: black;
@@ -141,7 +141,7 @@ body {
     margin: 0 auto;
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
-    background-color: #ddb9a6;
+    background-color: #e7d1c6;
   }
   .container-image {
     height: 24rem;
