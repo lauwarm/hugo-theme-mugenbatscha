@@ -159,6 +159,32 @@ body {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f6eeea;
+    color: #000;
+  }
+  .header li a:hover, .header .menu-btn:hover {
+    background-color: #e7d1c6;
+  }
+  .container-post {
+    background-color: #e7d1c6;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #494f5c;
+    color: #fff;
+  }
+  .header li a:hover, .header .menu-btn:hover {
+    background-color: #606778;
+  }
+  .container-post {
+    background-color: #606778;
+  }
+}
+
 img {
   height: 100% !important;
   width: 100% !important;
