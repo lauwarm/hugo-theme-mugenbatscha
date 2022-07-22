@@ -101,10 +101,10 @@ body {
 
 /* footer.html */
 .footer-author-copyright {
-  color: #ddb9a6;
+  color: #e7d1c6;
 }
 .footer-made-theme {
-  color: #ddb9a6;
+  color: #e7d1c6;
 }
 
 @media (min-width: 60em) { /* 1em = 16px */ /* desktop scaling*/
