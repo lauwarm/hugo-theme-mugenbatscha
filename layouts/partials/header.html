@@ -6,6 +6,7 @@
     </label>
     <ul class="menu flex justify-center"> <!--flex-->
         {{ range .Site.Menus.main }}
+        {{ if or (eq .Pre "tag") (eq .Pre "rss") (eq .Pre "info") (eq .Pre "user") }}
         <li>
             <a href="{{ .URL }}">
             {{ if .Pre }}
@@ -15,7 +16,9 @@
             </a>
         </li>
         {{ end }}
+        {{ end }}
     </ul>
+    <!--
     <ul class="menu flex justify-center">
         {{ range .Site.Menus.social }}
         <li>
@@ -28,4 +31,5 @@
         </li>
         {{ end }}
     </ul>
+    -->
   </header>

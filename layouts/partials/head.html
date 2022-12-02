@@ -18,7 +18,7 @@
     {{ $css := resources.Get "css/style.css" }}
     {{ $style := $css | resources.PostCSS (dict "inlineImports" true) | minify }}
 
-    <link rel="stylesheet" href="{{ $style.Permalink }}"/>
+    <link rel="stylesheet" href="{{ $style.Permalink | relURL}}"/>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

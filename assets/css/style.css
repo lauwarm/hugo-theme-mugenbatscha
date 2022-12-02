@@ -236,3 +236,32 @@ blockquote {
 .prose > ul > li > :last-child {
   margin-bottom: 0;
 }
+
+.title {
+  font-size: 4rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.social {
+  cursor: pointer;
+  display: flex;
+/*  flex-direction: column;*/
+  justify-content: left;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.social-button {
+  all: inherit;
+}
+
+.social-button-text {
+  margin-left: 25px;
+}

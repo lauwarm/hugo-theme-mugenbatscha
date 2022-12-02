@@ -1,21 +1,38 @@
 {{ define "main" }}
-<main class="m-0 px-4 overflow-y-auto">
-  {{ range .Pages.ByPublishDate.Reverse }}
-  <div class="max-w-full my-7 grid grid-cols-1 rounded-lg container-post">
-    {{ if .Params.image }}
-    <div class="h-96 w-full container-image">
-      <a class="title" href="{{ .RelPermalink }}"><img loading="lazy" class="cover-image rounded-t-lg" src='{{ with .Params.image }}{{ . }}{{ end }}'></a>
-    </div>
+<main class="flex-container">
+  <div class="title">It's {{ .Site.Author.name }}</div>
+
+  <div class="social">
+  {{ range .Site.Menus.main }}
+    {{ if eq .Pre "globe"}}
+    <div class="social-button">
+        <a href="{{ .URL }}">
+        {{ if .Pre }}
+        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+        {{ $icon }}
+        {{ end }}
+<!--        <p class="social-button-text">Blog</p>-->
+        </a>
+        
+      </div>
     {{ end }}
-    <div class="w-full text-center clear-both rounded-r-lg">
-      <br />
-      {{ partial "metadata.html" . }}
-      <br />
-      <a class="text-3xl flex justify-center" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <br />
-      <br />
-    </div>
-  </div>
   {{ end }}
-  </main>
+
+  {{ range .Site.Menus.social }}
+  <div class="social-button">
+      <a href="{{ .URL }}" target="_blank">
+      {{ if .Pre }}
+        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+        {{ $icon }}
+      {{ else }}
+      
+      {{ end }}
+<!--      <p class="social-button-text">{{ .Name }}</p>-->
+      </a>
+      
+    </div>
+  {{ end }}
+  </div>
+
+</main>
 {{ end }}

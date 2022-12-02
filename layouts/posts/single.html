@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="my-7 px-4">
+
+    {{ partial "metadata.html" . }}
+    <h1 class="text-3xl mb-8 mt-2 text-center">{{ .Title }}</h1>
+
+    <article class="max-w-full m-auto prose dark:prose-invert single-article">
+        {{ .Content }}
+    </article>
+
+</section>
+{{ end }}

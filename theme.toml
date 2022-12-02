@@ -8,7 +8,7 @@ features = ["none"]
 min_version = "0.86.1"
 
 [author]
-  name = "mugenbatscha"
+  name = "Fabian"
   homepage = "https://mugenbatscha.me/"
 
 # If porting an existing theme
