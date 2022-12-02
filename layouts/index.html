@@ -1,37 +1,35 @@
 {{ define "main" }}
 <main class="flex-container">
-  <div class="title">It's {{ .Site.Author.name }}</div>
+  <div class="title">
+    It's {{ .Site.Author.name }}
+  </div>
 
   <div class="social">
-  {{ range .Site.Menus.main }}
-    {{ if eq .Pre "globe"}}
-    <div class="social-button">
-        <a href="{{ .URL }}">
-        {{ if .Pre }}
-        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-        {{ $icon }}
-        {{ end }}
-<!--        <p class="social-button-text">Blog</p>-->
+    {{ range .Site.Menus.main }}
+      {{ if eq .Pre "globe"}}
+        <div class="social-button">
+          <a href="{{ .URL }}">
+            {{ if .Pre }}
+              {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+              {{ $icon }}
+            {{ end }}
+            <p class="social-button-text">Blog</p>
+          </a>
+        </div>
+      {{ end }}
+    {{ end }}
+
+    {{ range .Site.Menus.social }}
+      <div class="social-button">
+        <a href="{{ .URL }}" target="_blank">
+          {{ if .Pre }}
+            {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+            {{ $icon }}
+          {{ end }}
+          <p class="social-button-text">{{ .Name }}</p>
         </a>
-        
       </div>
     {{ end }}
-  {{ end }}
-
-  {{ range .Site.Menus.social }}
-  <div class="social-button">
-      <a href="{{ .URL }}" target="_blank">
-      {{ if .Pre }}
-        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-        {{ $icon }}
-      {{ else }}
-      
-      {{ end }}
-<!--      <p class="social-button-text">{{ .Name }}</p>-->
-      </a>
-      
-    </div>
-  {{ end }}
   </div>
 
 </main>

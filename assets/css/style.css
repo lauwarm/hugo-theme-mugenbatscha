@@ -238,21 +238,22 @@ blockquote {
 }
 
 .title {
+  cursor: default;
   font-size: 4rem;
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;   
 }
 
 .social {
   cursor: pointer;
   display: flex;
-/*  flex-direction: column;*/
+  flex-direction: column;
   justify-content: left;
   margin: 1rem;
   font-size: 2rem;
@@ -262,6 +263,70 @@ blockquote {
   all: inherit;
 }
 
+.social-button-icon {
+    all: inherit;
+}
+
 .social-button-text {
   margin-left: 25px;
+}
+
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+p {
+    all: unset;
+}
+
+
+h1 {
+    margin-bottom: 4rem;
+    max-width: 100%;
+    line-height: 1.1em;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: $day-background;
+    }
+    .title {
+        color: $day-text;
+    }
+    .social-button {
+        color: $day-background-social-button;
+    }
+    a {
+        all: unset;
+/*        transition: 0.5s linear;*/
+        &:hover {
+            color: $day-a;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $night-background;
+    }
+    .title {
+        color: $night-text;
+    }
+    .social-button {
+        color: $night-background-social-button;
+    }
+    a {
+        all: unset;
+/*        transition: 0.5s linear;*/
+        &:hover {
+            color: $night-a;
+        }
+    }
+}
+
+svg {
+  display: inline;
 }
