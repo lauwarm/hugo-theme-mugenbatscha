@@ -247,7 +247,7 @@ blockquote {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;   
+    min-height: 85vh;   
 }
 
 .social {
@@ -300,8 +300,11 @@ h1 {
     .social-button {
         color: $day-background-social-button;
     }
+    blockquote {
+      background: #E7D1C6;
+    }
     a {
-        all: unset;
+        /*all: unset;*/
 /*        transition: 0.5s linear;*/
         &:hover {
             color: $day-a;
@@ -319,8 +322,11 @@ h1 {
     .social-button {
         color: $night-background-social-button;
     }
+    blockquote {
+      background: #606778;
+    }
     a {
-        all: unset;
+        /*all: unset;*/
 /*        transition: 0.5s linear;*/
         &:hover {
             color: $night-a;
