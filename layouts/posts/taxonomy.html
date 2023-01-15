@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section>
+  {{ range  .Pages }}
+    {{ partial "item.html" . }}
+  {{ end }}
+</section>
+{{ end }}
