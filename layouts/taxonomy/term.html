@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{- partial "header.html" . -}}
+<main class="flex-1 overflow-y-auto p-5 mx-40">
+<ul>
+    {{ range .Data.Pages }}
+    <li>
+        <a href="{{.RelPermalink}}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+</main>
+
+{{ end }}
