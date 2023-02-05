@@ -1,9 +1,10 @@
-<!--
 {{ define "main" }}
-<section>
+{{- partial "header.html" . -}}
+
+<section> 
   {{ range  .Pages }}
     {{ partial "item.html" . }}
   {{ end }}
 </section>
+
 {{ end }}
--->
