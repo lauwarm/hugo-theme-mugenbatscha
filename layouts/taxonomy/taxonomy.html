@@ -1,31 +1,36 @@
 {{ define "main" }}
 {{- partial "header.html" . -}}
+
 <script src="/js/wordcloud2.js"></script>
-<script>
-  let tagMap = new Map();
-  let tagArray = new Array();
-  {{ range $key, $value := .Data.Terms }}
-      tagMap.set("{{ $key }}", {{ len $value }});
-      tagArray.push([{{ $key }}, {{ len $value }} ]);
-  {{ end }}
-  </script>
-<div id="tag-wrapper" style="width: 60%; height: 1000px;"></div>
 
 <script>
-  const tagCanvas = document.querySelector("#tag-wrapper"); // select your element to draw in
-    WordCloud(document.querySelector("#tag-wrapper"), {
-      list: tagArray,
-      classes: "tag-cloud-item", // add a class to each tag element so we can easily loop over it
-      weightFactor: 25,
-      backgroundColor: 0,
-    });
+let tagMap = new Map();
+let tagArray = new Array();
 
-    tagCanvas.addEventListener('wordcloudstop', function (e) {
-    // loop over all added elements (by class name)
-    document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
-        const text = element.innerHTML;
-        element.innerHTML = `<a href="/tags/${text}" style="color: inherit;">${text}</a>`;
-    });
+{{ range $key, $value := .Data.Terms }}
+  tagMap.set("{{ $key }}", {{ len $value }});
+  tagArray.push([{{ $key }}, {{ len $value }} ]);
+{{ end }}
+</script>
+
+<div class="max-w-full my-7 grid grid-cols-1 rounded-lg container-post" id="tag-wrapper" style="width: 60%; height: 300px;"></div>
+
+<script>
+const tagCanvas = document.querySelector("#tag-wrapper"); // select your element to draw in
+WordCloud(document.querySelector("#tag-wrapper"), {
+  list: tagArray,
+  classes: "tag-cloud-item", // add a class to each tag element so we can easily loop over it
+  weightFactor: 10,
+  backgroundColor: 0,
+});
+
+tagCanvas.addEventListener('wordcloudstop', function (e) {
+  // loop over all added elements (by class name)
+  document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
+    const text = element.innerHTML;
+    element.innerHTML = `<a href="/tags/${text}" style="color: inherit;">${text}</a>`;
+  });
 });
 </script>
+
 {{ end }}
