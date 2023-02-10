@@ -38,13 +38,50 @@ tagCanvas.addEventListener('wordcloudstop', function (e) {
   {{ range .Data.Terms.Alphabetical }}
     {{ if eq .Term "posts" }}
     {{ else }}
-    
+    {{ if le .Count 1 }}
+    <div class="max-w-full my-7 rounded-lg ">
+      <div class="w-full text-center clear-both rounded-r-lg text-base" >
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+    </div>
+
+    {{ else if le .Count 5 }}
+    <div class="max-w-full my-7 rounded-lg ">
+      <div class="w-full text-center clear-both rounded-r-lg text-lg" >
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+    </div>
+    {{ else if le .Count 10 }}
+    <div class="max-w-full my-7 rounded-lg ">
+      <div class="w-full text-center clear-both rounded-r-lg text-xl" >
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+    </div>
+    {{ else if le .Count 15 }}
+    <div class="max-w-full my-7 rounded-lg ">
+      <div class="w-full text-center clear-both rounded-r-lg text-2xl" >
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+    </div>
+    {{ else if le .Count 20 }}
+    <div class="max-w-full my-7 rounded-lg ">
+      <div class="w-full text-center clear-both rounded-r-lg text-3xl" >
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+    </div>
+      {{ else if le .Count 25 }}
       <div class="max-w-full my-7 rounded-lg ">
-        <div class="w-full text-center clear-both rounded-r-lg" style="font-size: calc(16px + {{ .Count }});">
+        <div class="w-full text-center clear-both rounded-r-lg text-4xl" >
           <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
         </div>
       </div>
-
+      {{ else if le .Count 30 }}
+      <div class="max-w-full my-7 rounded-lg ">
+        <div class="w-full text-center clear-both rounded-r-lg text-5xl" >
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </div>
+      </div>
+      {{ end }}
     {{ end }}
   {{ end }}
 
