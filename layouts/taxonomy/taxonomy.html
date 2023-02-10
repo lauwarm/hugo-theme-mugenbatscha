@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- partial "header.html" . -}}
-
+<!--
 <script src="/js/wordcloud2.js"></script>
 
 <script>
@@ -32,5 +32,22 @@ tagCanvas.addEventListener('wordcloudstop', function (e) {
   });
 });
 </script>
+-->
+<main class="m-0 px-4 overflow-y-auto">
+  
+  {{ range .Data.Terms.Alphabetical }}
+    {{ if eq .Term "posts" }}
+    {{ else }}
+    
+      <div class="max-w-full my-7 rounded-lg ">
+        <div class="w-full text-center clear-both rounded-r-lg" style="font-size: calc(16px + {{ .Count }});">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </div>
+      </div>
+
+    {{ end }}
+  {{ end }}
+
+</main>
 
 {{ end }}
