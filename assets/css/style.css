@@ -110,6 +110,12 @@ body {
 }
 
 @media (min-width: 60em) { /* 1em = 16px */ /* desktop scaling*/
+
+  /* Landing Page */
+  .landing-page {
+    min-height: 85vh;
+  }
+  
   /* Header and Menu Scaling*/
   .header {
     width: 100%;
@@ -240,6 +246,7 @@ blockquote {
 .title {
   cursor: default;
   font-size: 4rem;
+  font-weight: bold;
 }
 
 .flex-container {
