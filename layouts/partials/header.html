@@ -4,7 +4,7 @@
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="menu flex justify-center"> <!--flex-->
+    <ul class="menu flex justify-center pt-8"> <!--flex-->
         {{ range .Site.Menus.main }}
         {{ if or (eq .Pre "tag") (eq .Pre "rss") (eq .Pre "info") (eq .Pre "user") }}
         <li>
