@@ -2,20 +2,20 @@
     <a href="{{ "/" | absURL }}" class="logo ">Fabian</a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
-        <span class="navicon"></span>
+    <span class="navicon"></span>
     </label>
     <ul class="menu flex justify-center"> <!--flex-->
         {{ range .Site.Menus.main }}
-        {{ if or (eq .Pre "tag") (eq .Pre "rss") (eq .Pre "info") (eq .Pre "user") }}
-        <li class="pt-8">
-            <a href="{{ .URL }}">
-            {{ if .Pre }}
-            {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-            {{ $icon }}
+            {{ if or (eq .Pre "tag") (eq .Pre "rss") (eq .Pre "info") (eq .Pre "user") }}
+            <li class="pt-8">
+                <a href="{{ .URL }}">
+                    {{ if .Pre }}
+                        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+                        {{ $icon }}
+                    {{ end }}
+                </a>
+            </li>
             {{ end }}
-            </a>
-        </li>
-        {{ end }}
         {{ end }}
     </ul>
-  </header>
+</header>
