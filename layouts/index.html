@@ -1,10 +1,12 @@
 {{ define "main" }}
 <main class="flex-container mt-20 overflow-y-auto landing-page flex-1">
+  
   <div class="title">
     It's {{ .Site.Author.name }}
   </div>
 
   <div class="social">
+    <!--
     {{ range .Site.Menus.main }}
       {{ if eq .Pre "globe"}}
         <div class="social-button">
@@ -18,10 +20,10 @@
         </div>
       {{ end }}
     {{ end }}
-
+-->
     {{ range .Site.Menus.social }}
       <div class="social-button">
-        <a href="{{ .URL }}" target="_blank">
+        <a href="{{ .URL }}">
           {{ if .Pre }}
             {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
             {{ $icon }}
