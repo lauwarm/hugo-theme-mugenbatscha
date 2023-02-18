@@ -5,6 +5,9 @@
 body {
   font-family: Helvetica, sans-serif;
   background-color: #f6eeea;
+  min-height: 100vh;
+  margin:0;
+  display: flex;
 }
 
 /* header */
@@ -113,7 +116,7 @@ body {
 
   /* Landing Page */
   .landing-page {
-    min-height: 85vh;
+    min-height: 75vh;
   }
   
   /* Header and Menu Scaling*/
@@ -125,6 +128,7 @@ body {
   }
   .header li {
     float: left;
+    padding-top: 0;
   }
   .header li a {
     padding: 20px 30px;
