@@ -10,6 +10,25 @@ body {
   display: flex;
 }
 
+h1 {
+  margin-bottom: 4rem;
+  max-width: 100%;
+  line-height: 1.1em;
+}
+
+svg {
+display: inline;
+}
+
+img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* header */
 .header ul {
   margin: 0;
@@ -137,14 +156,10 @@ body {
     clear: none;
     float: right;
     max-height: none;
+    padding-top: 0px;
   }
   .header .menu-icon {
     display: none;
-  }
-
-  /* header scaling*/
-  .header .menu {
-    padding-top: 0px;
   }
 
   /* List of Posts Scaling*/
@@ -187,6 +202,27 @@ body {
     background-color: #e7d1c6;
   }
   */
+  /*
+  .title {
+    color: $day-text;
+  }
+  .social-button {
+    color: $day-background-social-button;
+  }
+  */
+  blockquote {
+    background: #E7D1C6;
+  }
+  /*
+  a {
+    all: unset;
+    transition: 0.5s linear;
+    
+    &:hover {
+      color: $day-a;
+    }
+  }
+  */
   .container-post {
     background-color: #e7d1c6;
   }
@@ -215,6 +251,28 @@ body {
     background-color: #606778;
   }
   */
+  /*
+  .title {
+    color: $night-text;
+  }
+  */
+  /*
+  .social-button {
+    color: $night-background-social-button;
+  }
+  */
+  blockquote {
+    background: #272822 !important;
+  }
+  /*
+  a {
+    *all: unset;
+    transition: 0.5s linear;
+    
+    &:hover {
+      color: $night-a;
+    }
+  }*/
   .container-post {
     background-color: #606778;
   }
@@ -226,18 +284,7 @@ body {
   }
 }
 
-img {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-blockquote {
-  background: #eaf2f6;
-}
 
 /* .prose overwriting */
 .prose > ul > li > :first-child {
@@ -283,68 +330,14 @@ blockquote {
   margin-left: 25px;
 }
 
-
+/*
 *, *:before, *:after {
     margin: 0;
     padding: 0;
 }
-
+*/
 /*
 p {
     all: unset;
 }
 */
-
-h1 {
-    margin-bottom: 4rem;
-    max-width: 100%;
-    line-height: 1.1em;
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: $day-background;
-    }
-    .title {
-        color: $day-text;
-    }
-    .social-button {
-        color: $day-background-social-button;
-    }
-    blockquote {
-      background: #E7D1C6;
-    }
-    a {
-        /*all: unset;*/
-/*        transition: 0.5s linear;*/
-        &:hover {
-            color: $day-a;
-        }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: $night-background;
-    }
-    .title {
-        color: $night-text;
-    }
-    .social-button {
-        color: $night-background-social-button;
-    }
-    blockquote {
-      background: #606778;
-    }
-    a {
-        /*all: unset;*/
-/*        transition: 0.5s linear;*/
-        &:hover {
-            color: $night-a;
-        }
-    }
-}
-
-svg {
-  display: inline;
-}
