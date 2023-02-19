@@ -6,29 +6,14 @@
   </div>
 
   <div class="social">
-    <!--
-    {{ range .Site.Menus.main }}
-      {{ if eq .Pre "globe"}}
-        <div class="social-button">
-          <a href="{{ .URL }}">
-            {{ if .Pre }}
-              {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-              {{ $icon }}
-            {{ end }}
-            <p class="social-button-text">Blog</p>
-          </a>
-        </div>
-      {{ end }}
-    {{ end }}
--->
     {{ range .Site.Menus.social }}
       <div class="social-button">
         <a href="{{ .URL }}">
           {{ if .Pre }}
             {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
             {{ $icon }}
+            <p class="social-button-text">{{ .Name }}</p>            
           {{ end }}
-          <p class="social-button-text">{{ .Name }}</p>
         </a>
       </div>
     {{ end }}
