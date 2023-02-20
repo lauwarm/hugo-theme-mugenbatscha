@@ -8,7 +8,7 @@
         {{ range .Site.Menus.main }}
             {{ if or (eq .Pre "tag") (eq .Pre "rss") (eq .Pre "info") (eq .Pre "user") }}
             <li class="pt-8">
-                <a href="{{ .URL }}">
+                <a href="{{ .URL }}" aria-label="{{ .Name }} Button">
                     {{ if .Pre }}
                         {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
                         {{ $icon }}
