@@ -17,7 +17,14 @@ h1 {
 }
 
 svg {
-display: inline;
+  display: inline;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+svg.feather {
+  fill: none;
 }
 
 img {
@@ -41,11 +48,11 @@ img {
   padding: 20px 20px;
   text-decoration: none;
 }
-/*
-.header li a:hover, .header .menu-btn:hover {
+
+/*.header li a:hover, .header .menu-btn:hover {
   background-color: #6b7280;
-}
-*/
+}*/
+
 .header .logo {
   display: block;
   float: left;
@@ -191,42 +198,18 @@ img {
     background-color: #f6eeea;
     color: #000;
   }
+  blockquote {
+    background: #E7D1C6;
+  }
   .header .menu-icon .navicon {
     background: #000;
   }
   .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
     background: #000;
   }
-  /*
-  .header li a:hover, .header .menu-btn:hover {
-    background-color: #e7d1c6;
-  }
-  */
-  /*
-  .title {
-    color: $day-text;
-  }
-  .social-button {
-    color: $day-background-social-button;
-  }
-  */
-  blockquote {
-    background: #E7D1C6;
-  }
-  /*
-  a {
-    all: unset;
-    transition: 0.5s linear;
-    
-    &:hover {
-      color: $day-a;
-    }
-  }
-  */
   .container-post {
     background-color: #e7d1c6;
   }
-
   .footer-author-copyright {
     color: #e7d1c6;
   }
@@ -240,39 +223,15 @@ img {
     background-color: #494f5c;
     color: #fff;
   }
+  blockquote {
+    background: #272822 !important;
+  }
   .header .menu-icon .navicon {
     background: #fff;
   }
   .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
     background: #fff;
-  }  
-  /*
-  .header li a:hover, .header .menu-btn:hover {
-    background-color: #606778;
   }
-  */
-  /*
-  .title {
-    color: $night-text;
-  }
-  */
-  /*
-  .social-button {
-    color: $night-background-social-button;
-  }
-  */
-  blockquote {
-    background: #272822 !important;
-  }
-  /*
-  a {
-    *all: unset;
-    transition: 0.5s linear;
-    
-    &:hover {
-      color: $night-a;
-    }
-  }*/
   .container-post {
     background-color: #606778;
   }
@@ -284,8 +243,6 @@ img {
   }
 }
 
-
-
 /* .prose overwriting */
 .prose > ul > li > :first-child {
   margin-top: 0;
@@ -294,6 +251,7 @@ img {
   margin-bottom: 0;
 }
 
+/* landing page */
 .title {
   cursor: default;
   font-size: 4rem;
@@ -329,15 +287,3 @@ img {
   all: unset;
   margin-left: 25px;
 }
-
-/*
-*, *:before, *:after {
-    margin: 0;
-    padding: 0;
-}
-*/
-/*
-p {
-    all: unset;
-}
-*/
