@@ -4,6 +4,6 @@ date: {{ .Date }}
 image: ""
 draft: true
 tags: [""]
-categories: [""]
+special: "about"
 ---
 
