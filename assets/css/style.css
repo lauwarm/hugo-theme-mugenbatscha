@@ -254,6 +254,8 @@ img {
 .prose {
   --tw-prose-bullets: none;
   --tw-prose-invert-bullets: none;
+  --tw-prose-hr: none;
+  --tw-prose-invert-hr: none;
 }
 
 /* landing page */
