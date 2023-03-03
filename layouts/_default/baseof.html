@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
     <body class="flex flex-col">
-        {{ if or (eq .Params.Special "impressum") (eq .Params.Special "about") }}
+        {{ if or (eq .Params.Special "imprint") (eq .Params.Special "about") (eq .Params.Special "privacy-policy")}}
             {{- partial "header.html" . -}}
         {{ end }}
         
