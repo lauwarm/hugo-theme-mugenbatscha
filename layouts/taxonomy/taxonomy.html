@@ -1,128 +1,43 @@
 {{ define "main" }}
 {{- partial "header.html" . -}}
-<!--
-<script src="/js/wordcloud2.js"></script>
 
-<script>
-let tagMap = new Map();
-let tagArray = new Array();
-
-{{ range $key, $value := .Data.Terms }}
-  tagMap.set("{{ $key }}", {{ len $value }});
-  tagArray.push([{{ $key }}, {{ len $value }} ]);
-{{ end }}
-</script>
-
-<div class="max-w-full my-7 grid grid-cols-1 rounded-lg container-post" id="tag-wrapper" style="width: 60%; height: 300px;"></div>
-
-<script>
-const tagCanvas = document.querySelector("#tag-wrapper"); // select your element to draw in
-WordCloud(document.querySelector("#tag-wrapper"), {
-  list: tagArray,
-  classes: "tag-cloud-item", // add a class to each tag element so we can easily loop over it
-  weightFactor: 10,
-  backgroundColor: 0,
-});
-
-tagCanvas.addEventListener('wordcloudstop', function (e) {
-  // loop over all added elements (by class name)
-  document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
-    const text = element.innerHTML;
-    element.innerHTML = `<a href="/tags/${text}" style="color: inherit;">${text}</a>`;
-  });
-});
-</script>
--->
 <main class="px-4 overflow-y-auto z-0" style="max-width: 50rem; margin-left: auto; margin-right: auto;">
-  <!--
+  <ul class="" style="text-align: center;">
   {{ range .Data.Terms.Alphabetical }}
     {{ if eq .Term "posts" }}
     {{ else }}
-    {{ if le .Count 1 }}
-    <div class="max-w-full my-7 rounded-lg ">
-      <div class="w-full text-center clear-both rounded-r-lg text-base" >
+      {{ if le .Count 1 }}
+        <li class="text-base pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+      {{ else if le .Count 5 }}
+      <li class="text-lg pr-2 pb-2" style="display: inline-block;">
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </div>
-    </div>
-
-    {{ else if le .Count 5 }}
-    <div class="max-w-full my-7 rounded-lg ">
-      <div class="w-full text-center clear-both rounded-r-lg text-lg" >
+      </li>
+      {{ else if le .Count 10 }}
+      <li class="text-xl pr-2 pb-2" style="display: inline-block;">
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </div>
-    </div>
-    {{ else if le .Count 10 }}
-    <div class="max-w-full my-7 rounded-lg ">
-      <div class="w-full text-center clear-both rounded-r-lg text-xl" >
+      </li>
+      {{ else if le .Count 15 }}
+      <li class="text-2xl pr-2 pb-2" style="display: inline-block;">
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </div>
-    </div>
-    {{ else if le .Count 15 }}
-    <div class="max-w-full my-7 rounded-lg ">
-      <div class="w-full text-center clear-both rounded-r-lg text-2xl" >
+      </li>
+      {{ else if le .Count 20 }}
+      <li class="text-3xl pr-2 pb-2" style="display: inline-block;">
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </div>
-    </div>
-    {{ else if le .Count 20 }}
-    <div class="max-w-full my-7 rounded-lg ">
-      <div class="w-full text-center clear-both rounded-r-lg text-3xl" >
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </div>
-    </div>
+      </li>
       {{ else if le .Count 25 }}
-      <div class="max-w-full my-7 rounded-lg ">
-        <div class="w-full text-center clear-both rounded-r-lg text-4xl" >
-          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-        </div>
-      </div>
+      <li class="text-4xl pr-2 pb-2" style="display: inline-block;">
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </li>
       {{ else if le .Count 30 }}
-      <div class="max-w-full my-7 rounded-lg ">
-        <div class="w-full text-center clear-both rounded-r-lg text-5xl" >
-          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-        </div>
-      </div>
+      <li class="text-5xl pr-2 pb-2" style="display: inline-block;">
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </li>
       {{ end }}
     {{ end }}
   {{ end }}
--->
-
-  <ul class="" style="text-align: center;">
-  {{ range .Data.Terms.Alphabetical }}
-  {{ if eq .Term "posts" }}
-  {{ else }}
-    {{ if le .Count 1 }}
-      <li class="text-base pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-    {{ else if le .Count 5 }}
-    <li class="text-lg pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ else if le .Count 10 }}
-    <li class="text-xl pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ else if le .Count 15 }}
-    <li class="text-2xl pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ else if le .Count 20 }}
-    <li class="text-3xl pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ else if le .Count 25 }}
-    <li class="text-4xl pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ else if le .Count 30 }}
-    <li class="text-5xl pr-2 pb-2" style="display: inline-block;">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-    </li>
-    {{ end }}
-  {{ end }}
-  {{ end }}
   </ul>
-
 </main>
 
 {{ end }}
