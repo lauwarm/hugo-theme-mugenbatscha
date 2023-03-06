@@ -37,6 +37,10 @@ img {
   justify-content: center;
 }
 
+p img {
+  border-radius: .5rem;
+}
+
 /* header */
 .header ul {
   margin: 0;
