@@ -10,10 +10,6 @@
       <div class="social-button">
         <a href="{{ .URL }}">
           {{ if .Pre }}
-          <!--
-            {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-            {{ $icon }}
-            -->
             {{ .Pre | safeHTML }}
             <p class="social-button-text">{{ .Name }}</p>            
           {{ end }}
