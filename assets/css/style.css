@@ -24,11 +24,9 @@ svg {
   vertical-align: unset;
 }
 
-
 svg.feather {
   fill: none;
 }
-
 
 img {
   height: 100% !important;
