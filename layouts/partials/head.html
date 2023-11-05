@@ -1,7 +1,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Webflow" name="generator">
     <meta name="description" content="{{ .Site.Params.HeadMetaContent }}"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-TileColor" content="#f6eeea">
@@ -14,7 +13,7 @@
     {{ $css := resources.Get "css/style.css" }}
     {{ $style := $css | resources.PostCSS (dict "inlineImports" true) | minify }}
 
-     <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/> 
+    <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/> 
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script> -->
     <!-- <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:regular,600","Lora:regular"]  }});</script> -->
