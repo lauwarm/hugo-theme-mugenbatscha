@@ -1,6 +1,51 @@
 {{ define "main" }}
-<main class="flex-container overflow-y-auto landing-page flex-1">
+<main class="columns w-row">
+  <div class="leftcontent w-col w-col-6 w-col-stack">
+    <div class="image">
+    </div>
+  </div>
+    <div class="rightcontent w-col w-col-6 w-col-stack">
+      <div class="content">
+        <div class="name">Fabian</div>
+        <h1 class="tagline"><strong class="bold-text">Coder. Hiker. Nomad.</strong></h1>
+        <p class="bio">
+          Passionate about coding and conquering mountains through hiking.
+          I transform ideas into functional programs using Python and JavaScript. 
+          Beyond the screen, I seek the raw beauty of nature, scaling majestic peaks, and discovering hidden wonders. 
+          Join me on this exhilarating journey as I merge coding with mountain exploration, striving for balance and fulfillment.
+        </p>
+        <div class="text-block-2">Connect</div>
+        <div class="links w-row">
+          <div class="row">
+            {{ range .Site.Menus.social }}
+            <div class="social-button">
+              <a href="{{ .URL }}">
+                {{ if .Pre }}
+                  {{ .Pre | safeHTML }}
+                {{ end }}
+              </a>
+            </div>
+          {{ end }}
+        </div>
+        </div>
+
+        <footer class="footer py-5 text-left">
+          <p class="text-sm footer-author-copyright">
+              &copy; {{ now.Format "2006" }} 
+              <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
+              {{ .Site.Params.footerCopyright | safeHTML }}
+          </p>
+          <p class="text-xs footer-made-theme">
+              Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 
+              &#183; Theme <a href="https://github.com/lauwarm/hugo-theme-mugenbatscha" target="_blank" rel="noopener">mugenbatscha</a>
+              &#183; Designed by <a href="https://itsfabian.me/" target="_blank" rel="noopener">Fabian</a>
+          </p>
+      </footer>
+      </div>
+      
   
+
+  <!--
   <div class="title">
     {{ .Site.Author.name }}
   </div>
@@ -17,6 +62,6 @@
       </div>
     {{ end }}
   </div>
-
+-->
 </main>
 {{ end }}

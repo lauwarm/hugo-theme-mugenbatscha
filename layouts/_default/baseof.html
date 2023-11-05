@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html data-wf-page="5ea837e8c81001b668dffd4a" data-wf-site="5ea837e8c8100167b2dffd49" lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
-    <body class="flex flex-col">
+    <body class="body">
         {{ if or (eq .Params.Special "imprint") (eq .Params.Special "about") (eq .Params.Special "privacy-policy")}}
             {{- partial "header.html" . -}}
         {{ end }}
         
         {{- block "main" . }}{{- end }}
-
-        {{- partial "footer.html" . -}}
+        
+        {{ if (eq .Site.Home false) }}
+            {{- partial "footer.html" . -}}
+        {{ end }}
     </body>
 </html>
