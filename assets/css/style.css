@@ -387,9 +387,9 @@ svg.feather {
   clear: both;
 }
 */
-.w-container .w-row {
-  margin-left: -10px;
-  margin-right: -10px;
+.w-row {
+  /*margin-left: -10px;*/
+  /*margin-right: -10px;*/
 }
 
 .w-row:before,
@@ -521,7 +521,7 @@ svg.feather {
 }
 
 .content {
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .links {
