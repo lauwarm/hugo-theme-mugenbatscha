@@ -85,7 +85,7 @@ svg.feather {
 
 .social-button {
   margin-right: 20px;
-  color: #777;
+  color: #CFCECE;
 }
 
 /* header */
@@ -319,23 +319,23 @@ svg.feather {
     background-color: #606778;
   }
   .footer-author-copyright {
-    color: #606778;
+    color: #636976;
   }
   .footer-made-theme {
-    color: #606778;
+    color: #636976;
   }
   /* NEU */
   .name {
-    color: #47bec7;
+    color: #CFCECE;
   }
   .tagline {
-    color: #ddd;
+    color: #fff;
   }
   .bio {
-    color: #47bec7;
+    color: #CFCECE;
   }
   .text-block-2 {
-    color: #ddd;
+    color: #CFCECE;
   }
   .list {
     color: #848d96;
