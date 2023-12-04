@@ -5,6 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-TileColor" content="#f6eeea">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    
 
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
@@ -13,7 +14,7 @@
     {{ $css := resources.Get "css/style.css" }}
     {{ $style := $css | resources.PostCSS (dict "inlineImports" true) | minify }}
 
-    <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/>
+    <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/> 
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ "/apple-icon-57x57.png" | absURL }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ "/apple-icon-60x60.png" | absURL }}">
@@ -29,5 +30,4 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{ "/favicon-96x96.png" | absURL }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | absURL }}">
     <link rel="manifest" href="{{ "/manifest.json" | absURL }}">
-
 </head>
