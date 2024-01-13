@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
-    <body class="body">
+    <body id="fullsingle" class="page-template-page-fullsingle-me me-video.old">
         {{ if or (eq .Params.Special "imprint") (eq .Params.Special "about") (eq .Params.Special "privacy-policy")}}
             {{- partial "header.html" . -}}
         {{ end }}
