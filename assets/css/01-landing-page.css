@@ -202,7 +202,7 @@ svg {
   .network ul li a:hover .svg-icon path,
   .network ul li a:hover .svg-icon polygon,
   .network ul li a:hover .svg-icon rect {
-          fill: #FFFFFF;
+          color: #FFFFFF;
           -webkit-transition: 0.1s;
           transition: 0.1s; 
   }
