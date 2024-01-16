@@ -1,3 +1,14 @@
+svg {
+    display: inline;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    vertical-align: unset;
+  }
+  
+  svg.feather {
+    fill: none;
+  }
 @-webkit-keyframes fadein {
     from {
       opacity: 0; }
@@ -126,7 +137,7 @@
     -webkit-transition: 1s;
     transition: 1s; 
   }
-      
+  
   .bio-landing a:hover {
         color: #FFFFFF;
         -webkit-transition: 0.1s;
@@ -187,7 +198,7 @@
             stroke: #999999;
             stroke-width: 1; 
   }
-        
+  
   .network ul li a:hover .svg-icon path,
   .network ul li a:hover .svg-icon polygon,
   .network ul li a:hover .svg-icon rect {
