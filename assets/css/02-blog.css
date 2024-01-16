@@ -104,7 +104,16 @@ h1 {
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
   }
-  
+
+  /* TODO: consistent hover effect
+  .header .blog-logo:hover,
+  .header ul li :hover,
+  a:hover {
+          color: #000;
+          -webkit-transition: 0.1s;
+          transition: 0.1s; 
+  }
+  *"
   /* index.html - DIVs containing Images and Text */
   .container-post {
     background-color: #e7d1c6;
