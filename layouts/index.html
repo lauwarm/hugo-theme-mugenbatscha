@@ -33,12 +33,24 @@
         </ul>
       </div>
       <div class="credit">
+        <!--
         <p class="copyright">&copy;2024 <a href="#">Fabian</a> - <a href="https://onepagelove.com/me">Me Template</a> by <a href="https://onepagelove.com">One Page Love</a></p>
+        -->
         <!-- 
         To edit this credit you can remove the CCA 3.0 license for only $5 here: https://onepagelove.com/me 
         this really helps contribute towards us developing more templates and means the world to me!
         Cheers, Rob (@robhope)
         -->
+        <p class="text-sm footer-author-copyright copyright">
+          &copy; {{ now.Format "2006" }} 
+          <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
+          {{ .Site.Params.footerCopyright | safeHTML }}
+      </p>
+        <p class="text-xs footer-made-theme copyright">
+          Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 
+          &#183; Theme <a href="https://github.com/lauwarm/hugo-theme-mugenbatscha" target="_blank" rel="noopener">mugenbatscha</a>
+          &#183; Designed by <a href="https://itsfabian.me/" target="_blank" rel="noopener">Fabian</a>
+      </p>
       </div>
     </div>
   </div>
