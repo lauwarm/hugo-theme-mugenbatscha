@@ -38,6 +38,12 @@ svg {
     margin-bottom: 28px;
     color: #999999; 
   }
+
+  @media (max-height: 460px) {
+    .logo {
+      margin-bottom: 10vh;
+    }
+  }
   
   @media (max-width: 800px) {
     body.page-template-page-fullsingle-me p {
@@ -51,6 +57,7 @@ svg {
     overflow: hidden;
     position: absolute;
     z-index: 2;
+    overflow-y: auto;
   }
   
   @media (max-width: 500px) {
