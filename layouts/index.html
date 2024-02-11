@@ -1,48 +1,51 @@
 {{ define "main" }}
-<main class="columns ">
-  <div class="leftcontent w-col w-col-6 w-col-stack">
-    <div class="image">
+<main>
+  <!-- Self-Hosted Video
+  <div class="me-video-container">
+    <video class="video" id="myVideo" playsinline muted autoplay loop src="/background.mp4"></video>	
+  </div>
+  -->
+  
+  <!-- Fullscreen Grayscale Div-->
+  <div class="fullscreen-opacity"></div>
+
+  <div class="fs-me">
+    <!-- Content Container -->
+    <div class="me-content">
+      <div class="logo">
+        <img src="/sig4.png" alt="Logo" />
+      </div>
+      <div class="bio-landing">
+        <!--<p>Coder. Hiker. Nomad.</p>-->
+       <!--<p>I publish code on <a href="#">Github</a>, write words on my <a href="#">Blog</a>&nbsp;and post pictures on&nbsp;<a href="#">Instagram</a>.</p>-->
+       <p>A code wizard conjuring digital magic to enhance your world.</p>
+      </div>
+      <div class="network">
+        <ul>
+          {{ range .Site.Menus.connect }}
+          <li>
+            <a href="{{ .URL }}">
+              {{ if .Pre }}
+                {{ .Pre | safeHTML }}
+              {{ end }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="credit">
+        <p class="text-sm footer-author-copyright copyright">
+          &copy; {{ now.Format "2006" }} 
+          <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
+          {{ .Site.Params.footerCopyright | safeHTML }}
+      </p>
+        <p class="text-xs footer-made-theme copyright">
+          Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 
+          &#183; Theme <a href="https://github.com/lauwarm/hugo-theme-mugenbatscha" target="_blank" rel="noopener">mugenbatscha</a>
+          &#183; Designed by <a href="https://itsfabian.me/" target="_blank" rel="noopener">Fabian</a>
+      </p>
+      </div>
     </div>
   </div>
-    <div class="rightcontent w-col w-col-6 w-col-stack">
-      <div class="content">
-        <div class="name">{{ .Site.Author.name}}</div>
-        <h1 class="tagline"><strong class="bold-text">Coder. Hiker. Nomad.</strong></h1>
-        <p class="bio">
-          <!--
-          Passionate about coding and conquering mountains.
-          I transform ideas into Apps using Swift and Java. 
-          Beyond the screen, I seek the raw beauty of nature, scaling majestic peaks, and discovering hidden wonders. 
-          Join me on this exhilarating journey as I merge coding with mountain exploration, striving for balance and fulfillment.
-          -->
-        </p>
-        <div class="text-block-2">Connect</div>
-        <div class="links w-row">
-          <div class="row">
-            {{ range .Site.Menus.connect }}
-            <div class="social-button">
-              <a href="{{ .URL }}">
-                {{ if .Pre }}
-                  {{ .Pre | safeHTML }}
-                {{ end }}
-              </a>
-            </div>
-          {{ end }}
-        </div>
-        </div>       
-
-        <footer class="footer py-5 text-left">
-          <p class="text-sm footer-author-copyright">
-              &copy; {{ now.Format "2006" }} 
-              <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
-              {{ .Site.Params.footerCopyright | safeHTML }}
-          </p>
-          <p class="text-xs footer-made-theme">
-              Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 
-              &#183; Theme <a href="https://github.com/lauwarm/hugo-theme-mugenbatscha" target="_blank" rel="noopener">mugenbatscha</a>
-              &#183; Designed by <a href="https://itsfabian.me/" target="_blank" rel="noopener">Fabian</a>
-          </p>
-      </footer>
-      </div>
 </main>
 {{ end }}

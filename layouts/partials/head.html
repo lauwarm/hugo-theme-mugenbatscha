@@ -11,10 +11,10 @@
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
 
-    {{ $css := resources.Get "css/style.css" }}
+    {{ $css := resources.Get "css/main.css" }}
     {{ $style := $css | resources.PostCSS (dict "inlineImports" true) | minify }}
 
-    <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/> 
+    <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/>
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ "/apple-icon-57x57.png" | absURL }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ "/apple-icon-60x60.png" | absURL }}">

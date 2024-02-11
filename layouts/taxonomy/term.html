@@ -1,4 +1,9 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{- partial "head.html" . -}}
+  
+  <body class="flex flex-col">
+
 {{- partial "header.html" . -}}
 <main class="m-0 px-4 overflow-y-auto">
     {{ range .Pages.ByPublishDate.Reverse }}
@@ -19,4 +24,7 @@
     </div>
     {{ end }}
     </main>
-{{ end }}
+
+  </body>
+  </html>
+  
