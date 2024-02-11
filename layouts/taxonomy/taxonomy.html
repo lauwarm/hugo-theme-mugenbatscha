@@ -1,43 +1,48 @@
-{{ define "main" }}
-{{- partial "header.html" . -}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{- partial "head.html" . -}}
+  
+  <body class="flex flex-col">
 
-<main class="px-4 overflow-y-auto z-0" style="max-width: 50rem; margin-left: auto; margin-right: auto;">
-  <ul class="" style="text-align: center;">
-  {{ range .Data.Terms.Alphabetical }}
-    {{ if eq .Term "posts" }}
-    {{ else }}
-      {{ if le .Count 1 }}
-        <li class="text-base pr-2 pb-2" style="display: inline-block;">
+  {{- partial "header.html" . -}}
+
+  <main class="px-4 overflow-y-auto z-0" style="max-width: 50rem; margin-left: auto; margin-right: auto;">
+    <ul class="" style="text-align: center;">
+    {{ range .Data.Terms.Alphabetical }}
+      {{ if eq .Term "posts" }}
+      {{ else }}
+        {{ if le .Count 1 }}
+          <li class="text-base pr-2 pb-2" style="display: inline-block;">
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          </li>
+        {{ else if le .Count 5 }}
+        <li class="text-lg pr-2 pb-2" style="display: inline-block;">
           <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
         </li>
-      {{ else if le .Count 5 }}
-      <li class="text-lg pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-      {{ else if le .Count 10 }}
-      <li class="text-xl pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-      {{ else if le .Count 15 }}
-      <li class="text-2xl pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-      {{ else if le .Count 20 }}
-      <li class="text-3xl pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-      {{ else if le .Count 25 }}
-      <li class="text-4xl pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
-      {{ else if le .Count 30 }}
-      <li class="text-5xl pr-2 pb-2" style="display: inline-block;">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      </li>
+        {{ else if le .Count 10 }}
+        <li class="text-xl pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+        {{ else if le .Count 15 }}
+        <li class="text-2xl pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+        {{ else if le .Count 20 }}
+        <li class="text-3xl pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+        {{ else if le .Count 25 }}
+        <li class="text-4xl pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+        {{ else if le .Count 30 }}
+        <li class="text-5xl pr-2 pb-2" style="display: inline-block;">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </li>
+        {{ end }}
       {{ end }}
     {{ end }}
-  {{ end }}
-  </ul>
-</main>
-
-{{ end }}
+    </ul>
+  </main>
+  </body>
+</html>
