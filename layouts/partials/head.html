@@ -1,9 +1,11 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
     <meta name="description" content="{{ .Site.Params.HeadMetaContent }}"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black" />
     <meta name="msapplication-TileColor" content="#f6eeea">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     
@@ -31,4 +33,20 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{ "/favicon-96x96.png" | absURL }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | absURL }}">
     <link rel="manifest" href="{{ "/manifest.json" | absURL }}">
+
+    <script type="application/javascript">
+        navigator.serviceWorker && navigator.serviceWorker.register('/service-worker.js').then(function(registration) {  console.log('Excellent, registered with scope: ', registration.scope);});
+        
+        /*if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered successfully:', registration);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+        */
+    </script>
 </head>
