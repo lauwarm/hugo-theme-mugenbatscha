@@ -1,5 +1,7 @@
 {
  "name": "App",
+ "short_name": "Awesome PWA",
+ "description": "A fantastic example of a PWA.",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,5 +39,10 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "start_url": "/",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#ffffff",
+ "theme_color": "#000000"
 }
