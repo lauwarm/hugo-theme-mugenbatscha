@@ -1,62 +1,75 @@
 h1 {
-    margin-bottom: 4rem;
-    max-width: 100%;
-    line-height: 1.1em;
-  }
+  margin-bottom: 4rem;
+  max-width: 100%;
+  line-height: 1.1em;
+}
   
-  p img {
-    border-radius: .5rem;
-  }
-/* Landing Page */
-/*
-.row {
-  display: flex;
-  flex-direction: row;
+p img {
+  border-radius: .5rem;
 }
 
-.social-button {
-  margin-right: 20px;
-  color: #CFCECE;
-}*/
-
 /* header */
+@media (display-mode: standalone) {
+  /* All installed PWAs */
+  .header {
+    padding-top: 10vh !important;
+  }
+}
+
+@media (min-width: 576px) and (display-mode: standalone) {
+  /* Installed PWAs on mobile devices */
+  body {
+    padding-left: 10vh;
+    padding-right: 10vh;
+  }
+  .header {
+    padding-top: 10vh;
+  }
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile Apple devices */
+  }
+  
+  @supports not (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile non-Apple devices */
+  }
+}
+
 .header ul {
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
   }
-  .header li a {
-    display: block;
-    padding: 20px 20px;
-    text-decoration: none;
-  }
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
   
   /*.header li a:hover, .header .menu-btn:hover {
     background-color: #6b7280;
   }*/
   
-  .header .blog-logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    text-decoration: none;
-  }
+.header .blog-logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  text-decoration: none;
+}
   
-  /* menu */
-  .header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s linear;
-  
-  }
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s linear;
+}
   
   /* menu icon */
   .header .menu-icon {
     cursor: pointer;
     display: block;
     float: right;
-    padding: 23px;
+    padding: 15px;
     position: relative;
     user-select: none;
     padding-right: 3px;

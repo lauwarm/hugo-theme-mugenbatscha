@@ -85,7 +85,26 @@ svg {
       height: 90vh; 
     } 
   }
+
+  @media (display-mode: standalone) {
+    /* All installed PWAs */
+  }
   
+  @media (max-width: 576px) and (display-mode: standalone) {
+    /* Installed PWAs on mobile devices */
+    .fs-me .me-content {
+      padding-top: 5vh; /* notch */
+    }
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      /* Installed PWAs on mobile Apple devices */
+    }
+    
+    @supports not (-webkit-overflow-scrolling: touch) {
+      /* Installed PWAs on mobile non-Apple devices */
+    }
+  }
+
   .logo {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
