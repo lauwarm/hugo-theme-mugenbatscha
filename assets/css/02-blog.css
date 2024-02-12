@@ -11,9 +11,6 @@ p img {
 /* header */
 @media (display-mode: standalone) {
   /* All installed PWAs */
-  .header {
-    padding-top: 10vh !important;
-  }
 }
 
 @media (min-width: 576px) and (display-mode: standalone) {
