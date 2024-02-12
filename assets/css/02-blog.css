@@ -19,6 +19,17 @@ p img {
     padding-left: 10vh;
     padding-right: 10vh;
   }
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile Apple devices */
+  }
+  
+  @supports not (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile non-Apple devices */
+  }
+}
+
+@media (max-width: 576px) and (display-mode: standalone) {
+  /* Installed PWAs on mobile devices */
   .header {
     padding-top: 10vh;
   }
