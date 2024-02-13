@@ -1,7 +1,7 @@
 {
- "name": "App",
- "short_name": "Awesome PWA",
- "description": "A fantastic example of a PWA.",
+ "name": "Fabian's Blog",
+ "short_name": "Fabian's Blog",
+ "description": "Fabian's Blog but as a PWA",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
