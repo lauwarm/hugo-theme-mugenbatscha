@@ -34,21 +34,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon-32x32.png" | absURL }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ "/favicon-96x96.png" | absURL }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | absURL }}">
-    <link rel="manifest" href="{{ "/manifest.json" | absURL }}">
+    <link rel="manifest" href="{{ "/manifest.webmanifest" | absURL }}">
 
     <script type="application/javascript">
-        navigator.serviceWorker && navigator.serviceWorker.register('/service-worker.js').then(function(registration) {  console.log('Excellent, registered with scope: ', registration.scope);});
-        
-        /*if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('/service-worker.js')
-                .then((registration) => {
-                    console.log('Service Worker registered successfully:', registration);
-                })
-                .catch((error) => {
-                    console.log('Service Worker registration failed:', error);
-                });
-        }
-        */
+        navigator.serviceWorker && navigator.serviceWorker
+            .register('/service-worker.js')
+            .then(function(registration) {  
+                console.log('Excellent, registered with scope: ', registration.scope);
+            });
     </script>
 </head>
