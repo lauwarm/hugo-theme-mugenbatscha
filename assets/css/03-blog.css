@@ -24,11 +24,11 @@ p img {
 }
 
 /* header */
-@media (display-mode: standalone) {
+@media (display-mode: fullscreen) {
   /* All installed PWAs */
 }
 
-@media (min-width: 576px) and (display-mode: standalone) {
+@media (min-width: 576px) and (display-mode: fullscreen) {
   /* Installed PWAs on mobile devices */
 
   @supports (-webkit-overflow-scrolling: touch) {
@@ -44,7 +44,7 @@ p img {
   }
 }
 
-@media (max-width: 576px) and (display-mode: standalone) {
+@media (max-width: 576px) and (display-mode: fullscreen) {
   /* Installed PWAs on mobile devices */
   .header {
     padding-top: 10vh;

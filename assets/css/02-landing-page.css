@@ -80,12 +80,12 @@ body.page-template-page-fullsingle-me p {
   } 
 }
 
-@media (display-mode: standalone) {
+@media (display-mode: fullscreen) {
   /* All installed PWAs */
 }
   
-@media (max-width: 576px) and (display-mode: standalone) {
-  /* Installed PWAs on mobile devices */
+@media (max-width: 576px) and (display-mode: fullscreen) {
+  /* Inlled PWAs on mobile devices */
   .fs-me .me-content {
     padding-top: 5vh; /* notch */
   }
