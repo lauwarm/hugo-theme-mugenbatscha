@@ -47,7 +47,7 @@ p img {
 @media (max-width: 576px) and (display-mode: fullscreen) {
   /* Installed PWAs on mobile devices */
   .header {
-    padding-top: 10vh;
+    padding-top: 7vh;
   }
   @supports (-webkit-overflow-scrolling: touch) {
     /* Installed PWAs on mobile Apple devices */
