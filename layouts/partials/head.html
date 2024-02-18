@@ -18,7 +18,6 @@
 
     {{ $css := resources.Get "css/main.css" }}
     {{ $style := $css | resources.PostCSS (dict "inlineImports" true) | minify }}
-
     <link rel="stylesheet" href="{{ $style.Permalink | absURL}}"/>
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ "/apple-icon-57x57.png" | absURL }}">
@@ -37,11 +36,10 @@
     <link rel="manifest" href="{{ "/manifest.webmanifest" | absURL }}">
 
     {{ $js := resources.Get "js/service-worker.js" }}
-
     <script type="application/javascript" src="{{ $js.Permalink | absURL }}"></script>
 
     {{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
-{{ end }}
+        {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end }}
 
 </head>
